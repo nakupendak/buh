@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Бухгалтерские услуги Веры Букатиной в Перми: отчетность, налоги, учет, восстановление учета и консультации.">
+  <title>Вера Букатина | Бухгалтерские услуги в Перми</title>
+  <style>
+    :root {
+      --ink: #182536;
+      --muted: #5d6a78;
+      --navy: #243549;
+      --navy-2: #1b2a3c;
+      --blue: #235ce8;
+      --blue-soft: #dce8f5;
+      --paper: #ffffff;
+      --mist: #f4f7fb;
+      --line: #d9e2ec;
+      --brass: #b08b49;
+      --green: #607d62;
+      --shadow: 0 18px 45px rgba(24, 37, 54, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+      background: var(--paper);
+      overflow-x: hidden;
+    }
+
+    img,
+    iframe {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.93);
+      border-bottom: 1px solid rgba(217, 226, 236, 0.85);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--navy);
+    }
+
+    .brand span {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav a:hover,
+    .phone-link:hover {
+      color: var(--blue);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      white-space: nowrap;
+    }
+
+    .phone-link {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--paper);
+      transition: 0.2s ease;
+    }
+
+    .icon-button:hover {
+      color: var(--paper);
+      border-color: var(--blue);
+      background: var(--blue);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: clamp(560px, 82svh, 720px);
+      overflow: hidden;
+      background: var(--blue-soft);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(220, 232, 245, 0.12) 0%, rgba(220, 232, 245, 0.45) 35%, rgba(255, 255, 255, 0.94) 64%, #ffffff 100%),
+        url("assets/hero-accounting.png");
+      background-size: cover;
+      background-position: center left;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 110px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: inherit;
+      display: grid;
+      align-items: center;
+      grid-template-columns: minmax(0, 1fr) minmax(430px, 0.9fr);
+      gap: 44px;
+      padding: 48px 0;
+    }
+
+    .hero-copy {
+      grid-column: 2;
+      width: 100%;
+      max-width: 650px;
+      min-width: 0;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.98;
+      font-weight: 800;
+    }
+
+    .service-strip {
+      width: 100%;
+      max-width: 620px;
+      margin: 28px 0 24px;
+      padding: 18px 24px;
+      color: var(--paper);
+      background: var(--navy);
+      font-size: clamp(20px, 2.5vw, 30px);
+      line-height: 1.2;
+      font-weight: 700;
+      text-align: center;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    .hero-text {
+      max-width: 570px;
+      margin: 0 0 28px;
+      color: #35475b;
+      font-size: 20px;
+      overflow-wrap: break-word;
+    }
+
+    .hero-actions,
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--paper);
+      background: var(--blue);
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--navy-2);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      border-color: var(--navy);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .button.secondary:hover {
+      color: var(--paper);
+      background: var(--navy);
+    }
+
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: -1px;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quick-info div {
+      min-height: 118px;
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .quick-info span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quick-info strong {
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lead {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .about {
+      background: var(--paper);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.88fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .about-grid > *,
+    .about-side,
+    .metrics,
+    .metric {
+      min-width: 0;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 18px;
+      color: #3a4958;
+      font-size: 18px;
+    }
+
+    .about-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-photo-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--mist);
+      box-shadow: var(--shadow);
+    }
+
+    .about-photo-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-caption {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      padding: 16px 18px;
+      color: var(--paper);
+      border-radius: 8px;
+      background: rgba(27, 42, 60, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .photo-caption strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .photo-caption span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .metric {
+      min-height: 148px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--mist);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--blue);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--mist);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 220px;
+      padding: 28px;
+      border: 1px solid rgba(217, 226, 236, 0.9);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 10px 28px rgba(24, 37, 54, 0.06);
+    }
+
+    .service-number {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 26px;
+      color: var(--paper);
+      border-radius: 50%;
+      background: var(--navy);
+      font-weight: 700;
+    }
+
+    .service-card p,
+    .benefit p,
+    .step p {
+      color: var(--muted);
+    }
+
+    .benefits {
+      background: var(--paper);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      padding: 26px;
+      border-top: 4px solid var(--brass);
+      border-radius: 8px;
+      background: #fbfcfe;
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--green);
+      border: 1px solid rgba(96, 125, 98, 0.35);
+      border-radius: 50%;
+      background: #eef4ef;
+    }
+
+    .steps {
+      color: var(--paper);
+      background: var(--navy);
+    }
+
+    .steps h2,
+    .steps h3,
+    .steps .section-kicker {
+      color: var(--paper);
+    }
+
+    .steps .lead {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .steps-list {
+      position: relative;
+      display: grid;
+      gap: 0;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 18px 0;
+    }
+
+    .steps-list::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateX(-50%);
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 78px 1fr;
+      align-items: center;
+      min-height: 136px;
+    }
+
+    .step:nth-child(even) .step-content {
+      grid-column: 3;
+      text-align: left;
+    }
+
+    .step:nth-child(odd) .step-content {
+      grid-column: 1;
+      text-align: right;
+    }
+
+    .step-marker {
+      grid-column: 2;
+      width: 58px;
+      height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
+      color: var(--navy);
+      border: 2px solid rgba(255, 255, 255, 0.58);
+      border-radius: 50%;
+      background: var(--paper);
+      font-weight: 800;
+      box-shadow: 0 0 0 8px var(--navy);
+    }
+
+    .step p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .contact {
+      background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .detail {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .detail span {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .detail strong,
+    .detail a {
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .contact-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .call-card {
+      display: grid;
+      gap: 16px;
+      padding: 28px;
+    }
+
+    .call-card p {
+      color: var(--muted);
+    }
+
+    .call-phone {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .call-note {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      color: var(--green);
+      border: 1px solid rgba(96, 125, 98, 0.28);
+      border-radius: 999px;
+      background: #eef4ef;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .map-frame {
+      height: 320px;
+      border-top: 1px solid var(--line);
+      background: var(--blue-soft);
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      color: rgba(255, 255, 255, 0.78);
+      background: var(--navy-2);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .footer-inner a {
+      color: var(--paper);
+      font-weight: 700;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        align-items: end;
+        padding: 56px 0 70px;
+      }
+
+      .hero-copy {
+        grid-column: 1;
+        max-width: 680px;
+        margin-left: auto;
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.94)),
+          url("assets/hero-accounting.png");
+        background-position: center left;
+      }
+
+      .quick-info,
+      .service-grid,
+      .benefit-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid,
+      .about-grid {
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        padding-inline: 22px;
+      }
+
+      .header-inner {
+        min-height: 64px;
+        gap: 12px;
+      }
+
+      .header-actions .phone-link {
+        display: none;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .hero {
+        min-height: clamp(520px, 74svh, 660px);
+      }
+
+      .hero-inner {
+        display: flex;
+        align-items: center;
+        padding: 30px 0 40px;
+      }
+
+      .hero-copy {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        margin-left: 0;
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(180deg, rgba(27, 42, 60, 0.64), rgba(27, 42, 60, 0.74)),
+          url("assets/hero-accounting.png");
+        background-position: center left;
+      }
+
+      .hero h1,
+      .eyebrow,
+      .hero-text {
+        color: var(--paper);
+      }
+
+      .service-strip {
+        width: 100%;
+        max-width: 100%;
+        margin: 22px 0;
+        padding: 16px 18px;
+        font-size: 18px;
+        text-align: left;
+      }
+
+      .hero-text {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .button.secondary {
+        color: var(--paper);
+        border-color: rgba(255, 255, 255, 0.72);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .quick-info,
+      .service-grid,
+      .benefit-grid,
+      .about-grid,
+      .contact-grid,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 29px;
+        line-height: 1.12;
+        overflow-wrap: anywhere;
+      }
+
+      .about-text,
+      .metric span,
+      .service-card p,
+      .benefit p,
+      .step p,
+      .lead {
+        max-width: 32ch;
+        overflow-wrap: anywhere;
+      }
+
+      .quick-info div {
+        min-width: 0;
+        min-height: auto;
+        padding: 22px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .section-head {
+        margin-bottom: 32px;
+      }
+
+      .steps-list::before {
+        left: 29px;
+      }
+
+      .step {
+        grid-template-columns: 58px 1fr;
+        gap: 18px;
+        min-height: auto;
+        padding: 20px 0;
+      }
+
+      .step-marker {
+        grid-column: 1;
+        width: 48px;
+        height: 48px;
+        box-shadow: 0 0 0 6px var(--navy);
+      }
+
+      .step:nth-child(odd) .step-content,
+      .step:nth-child(even) .step-content {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-copy {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .header-actions {
+        gap: 8px;
+      }
+
+      .header-actions a[aria-label="Написать в WhatsApp"] {
+        display: none;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .brand span {
+        font-size: 12px;
+      }
+
+      .icon-button {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-text,
+      .lead {
+        font-size: 17px;
+      }
+
+      .call-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Вера Букатина">
+        Вера Букатина
+        <span>Бухгалтерские услуги</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#steps">Этапы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="phone-link" href="tel:+79526633553">+7 952 663-35-53</a>
+        <a class="icon-button" href="tel:+79526633553" aria-label="Позвонить">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.46c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="icon-button" href="https://wa.me/79526633553" aria-label="Написать в WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3.4 20.6 4.7 16A8.7 8.7 0 1 1 8 19.2l-4.6 1.4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8.7 8.6c.2-.5.4-.5.8-.5h.5c.2 0 .4 0 .5.4l.7 1.7c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.6c.2-.2.4-.2.7-.1l1.6.8c.4.2.4.4.4.6 0 .7-.6 1.6-1.3 1.7-1.1.2-3-.4-4.7-1.8-1.7-1.4-2.9-3.3-3-4.5 0-.7.5-1.4.9-1.8Z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Бухгалтерские услуги Веры Букатиной">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Бухгалтерские услуги в Перми</p>
+          <h1>Вера<br>Букатина</h1>
+          <div class="service-strip">Бухгалтерское<br>сопровождение</div>
+          <p class="hero-text">Отчетность, налоги, документы,<br>консультации и восстановление учета.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+79526633553">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.46c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Позвонить Вере
+            </a>
+            <a class="button secondary" href="#contacts">Контакты</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-info" aria-label="Краткая информация">
+      <div>
+        <span>Телефон</span>
+        <strong><a href="tel:+79526633553">+7 952 663-35-53</a></strong>
+      </div>
+      <div>
+        <span>Адрес</span>
+        <strong>Пермь, Калинина 46</strong>
+      </div>
+      <div>
+        <span>График</span>
+        <strong>Ежедневно с 10:00 до 20:00</strong>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker">Пара слов</p>
+          <h2>Бухгалтерия, которая<br>не отвлекает вас от<br>бизнеса</h2>
+          <div class="about-text">
+            <p>Я беру на себя регулярный учет, подготовку отчетности, контроль сроков и налоговые вопросы, чтобы у вас оставалась ясная картина по обязательствам и документам.</p>
+            <p>Работаю аккуратно, без лишней бюрократии: сначала разбираю ситуацию, затем согласую понятный объем работ и поддерживаю связь в удобном формате.</p>
+          </div>
+        </div>
+
+        <div class="about-side">
+          <figure class="about-photo-card">
+            <img src="assets/vera-office.png" alt="Вера Букатина в офисе" loading="lazy">
+            <figcaption class="photo-caption">
+              <strong>Вера Букатина</strong>
+              <span>Личное сопровождение и консультации</span>
+            </figcaption>
+          </figure>
+
+          <div class="metrics" aria-label="Преимущества">
+            <div class="metric">
+              <strong>01</strong>
+              <span>Понятный порядок в документах, налогах и сроках отчетности.</span>
+            </div>
+            <div class="metric">
+              <strong>02</strong>
+              <span>Консультации по текущим вопросам без сложного языка.</span>
+            </div>
+            <div class="metric">
+              <strong>03</strong>
+              <span>Бухгалтерское сопровождение для ИП и компаний.</span>
+            </div>
+            <div class="metric">
+              <strong>04</strong>
+              <span>Офис в Перми и связь каждый день с 10:00 до 20:00.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Услуги</p>
+          <h2>Что можно передать на сопровождение</h2>
+          <p class="lead">Вы можете обратиться за разовой помощью или передать бухгалтерию на регулярное ведение.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number">1</span>
+            <h3>Сдача отчетности</h3>
+            <p>Подготовка и отправка налоговой, бухгалтерской и другой обязательной отчетности в установленные сроки.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">2</span>
+            <h3>Налоговые декларации</h3>
+            <p>Расчет налогов, заполнение деклараций, проверка данных и помощь с текущими налоговыми вопросами.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">3</span>
+            <h3>Ведение учета</h3>
+            <p>Регулярная работа с первичными документами, платежами, актами, счетами и учетными регистрами.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">4</span>
+            <h3>Восстановление учета</h3>
+            <p>Разбор накопленных документов, поиск ошибок, восстановление недостающих данных и приведение учета в порядок.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">5</span>
+            <h3>Кадровые документы</h3>
+            <p>Подготовка базовых кадровых документов, расчетов и связанных отчетов для сотрудников.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">6</span>
+            <h3>Консультации</h3>
+            <p>Ответы на вопросы по налогам, документам, режимам налогообложения и бухгалтерским процессам.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Почему удобно</p>
+          <h2>Спокойный рабочий процесс без лишнего шума</h2>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Сроки под контролем</h3>
+            <p>Отчетные даты и обязательные платежи заранее попадают в работу.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3>Понятные документы</h3>
+            <p>Вы знаете, какие бумаги нужны, что уже готово и что осталось закрыть.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M6 8h9a3 3 0 0 1 0 6H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Без переплат</h3>
+            <p>Расчеты проверяются до отправки, чтобы снизить риск ошибок и лишних начислений.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M21 12a9 9 0 1 1-3-6.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M21 4v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Гибкий формат</h3>
+            <p>Можно начать с консультации, разовой задачи или полного сопровождения.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" id="steps">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Этапы</p>
+          <h2>Как начинается работа</h2>
+          <p class="lead">Сначала оцениваем задачу и документы, затем фиксируем объем и спокойно двигаемся по срокам.</p>
+        </div>
+
+        <div class="steps-list">
+          <article class="step">
+            <div class="step-content">
+              <h3>Анализ потребностей</h3>
+              <p>Обсуждаем систему налогообложения, объем операций, текущие задачи и срочные вопросы.</p>
+            </div>
+            <span class="step-marker">1</span>
+          </article>
+          <article class="step">
+            <div class="step-content">
+              <h3>Проверка документов</h3>
+              <p>Смотрим, какие данные есть, чего не хватает и какие сроки нужно учесть в первую очередь.</p>
+            </div>
+            <span class="step-marker">2</span>
+          </article>
+          <article class="step">
+            <div class="step-content">
+              <h3>Согласование работ</h3>
+              <p>Определяем формат сопровождения, порядок передачи информации и удобный канал связи.</p>
+            </div>
+            <span class="step-marker">3</span>
+          </article>
+          <article class="step">
+            <div class="step-content">
+              <h3>Ведение и отчетность</h3>
+              <p>Поддерживаем учет, готовим отчеты, контролируем платежи и отвечаем на вопросы по ходу работы.</p>
+            </div>
+            <span class="step-marker">4</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacts">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker">Контакты</p>
+          <h2>Позвоните, чтобы обсудить задачу</h2>
+          <p class="lead">Вера Букатина, бухгалтерские услуги в Перми. Без форм: сразу звонок по телефону.</p>
+
+          <div class="contact-details">
+            <div class="detail">
+              <span>Телефон</span>
+              <a href="tel:+79526633553">+7 952 663-35-53</a>
+            </div>
+            <div class="detail">
+              <span>Адрес</span>
+              <strong>Пермь, ул. Калинина, 46</strong>
+            </div>
+            <div class="detail">
+              <span>Время работы</span>
+              <strong>Ежедневно с 10:00 до 20:00</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel">
+          <div class="call-card">
+            <span class="call-note">Прямой звонок</span>
+            <h3>Обсудите бухгалтерию по телефону</h3>
+            <a class="call-phone" href="tel:+79526633553">+7 952 663-35-53</a>
+            <p>Звоните ежедневно с 10:00 до 20:00. Вера уточнит задачу, сроки и подскажет ближайший формат работы.</p>
+            <a class="button" href="tel:+79526633553">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8.09 9.69a16 16 0 0 0 6.22 6.22l1.21-1.2a2 2 0 0 1 2.11-.46c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Позвонить сейчас
+            </a>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              title="Пермь, улица Калинина, 46 на карте"
+              loading="lazy"
+              src="https://yandex.ru/map-widget/v1/?text=%D0%9F%D0%B5%D1%80%D0%BC%D1%8C%2C%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2046&amp;z=16">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Вера Букатина. Бухгалтерские услуги.</span>
+      <a href="tel:+79526633553">+7 952 663-35-53</a>
+    </div>
+  </footer>
+</body>
+</html>
